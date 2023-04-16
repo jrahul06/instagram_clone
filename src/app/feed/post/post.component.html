@@ -1,0 +1,49 @@
+<div class="post">
+  <div class="d-flex justify-content-between pad">
+    <div class="post-title">
+      <span class="user-icon"></span>
+      <h5 class="d-inline-block mb-0 mx-1 fw-bold">
+        {{ data.author == null ? "User" : (data.author | truncSymbol : ",") }}
+      </h5>
+    </div>
+    <div class="d-flex align-items-center">
+      <span class="dot-icon"></span>
+    </div>
+  </div>
+  <img [src]="data.urlToImage" alt="Post 1" class="post-image" />
+  <div class="post-btns d-flex justify-content-between pad">
+    <div>
+      <span class="like-icon mx-2"></span>
+      <span class="comment-icon mx-2"></span>
+      <span class="share-icon mx-2"></span>
+    </div>
+    <div>
+      <span class="save-icon"></span>
+    </div>
+  </div>
+  <div class="d-flex pad">
+    <div class="users">
+      <span
+        class="user-icon rounded-circle border border-3 border-white position-absolute start-100 z"
+      ></span>
+      <span
+        class="user-icon rounded-circle border border-3 border-white position-absolute start-50"
+      ></span>
+      <span
+        class="user-icon rounded-circle border border-3 border-white z-index-1"
+      ></span>
+    </div>
+    <p class="likes-text">
+      Liked by <span class="fw-bold">neeharika_boda</span> and
+      <span class="fw-bold">62,707 others</span>
+    </p>
+  </div>
+  <div class="post-caption pad">
+    <p class="mb-0" (click)="expandText = !expandText">
+      <span class="fw-bold">{{
+        data.author == null ? "User" : (data.author | truncSymbol : ",")
+      }}</span>
+      {{ data.description | truncate : 30 : expandText }}
+    </p>
+  </div>
+</div>

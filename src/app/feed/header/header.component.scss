@@ -1,0 +1,26 @@
+.header {
+  background: #f8f8f8;
+  padding: 10px;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.send-icon {
+  display: inline-block;
+  background: url(../../../assets/images/sent.png) center no-repeat;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.camera-icon {
+  display: inline-block;
+  background: url(../../../assets/images/camera.png) center no-repeat;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+}
