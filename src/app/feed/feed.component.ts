@@ -24,15 +24,24 @@ export class FeedComponent {
   }
 
   loadData(): void {
+    // this.apiService
+    //   .getData(
+    //     `https://newsapi.org/v2/top-headlines?country=us&apiKey=b8763c70d66c4240a805e2590215256e`
+    //   )
+    //   .subscribe((responseData: any) => {
+    //     if (responseData.status === 'ok') {
+    //       this.masterData = responseData.articles;
+    //       this.masterData.shift();
+    //       this.loadMoreItems();
+    //     }
+    //   });
     this.apiService
-      .getData(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=b8763c70d66c4240a805e2590215256e`
-      )
+      .getData(`../../assets/json/data.json`)
       .subscribe((responseData: any) => {
-        if (responseData.status === 'ok') {
-          this.masterData = responseData.articles;
-          this.loadMoreItems();
-        }
+        console.log(responseData);
+        this.masterData = responseData;
+        this.masterData.shift();
+        this.loadMoreItems();
       });
   }
 
